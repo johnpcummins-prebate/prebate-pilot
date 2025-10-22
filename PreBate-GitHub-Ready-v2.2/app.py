@@ -42,9 +42,9 @@ st.markdown("""
 
 # Header
 if LOGO_PATH and LOGO_PATH.exists():
-    st.image(LOGO_PATH.as_posix(), use_container_width=True)
+    st.image(str(LOGO_PATH), use_container_width=True)
 else:
-    st.warning("Logo not found. Looked in: " + ", ".join(p.as_posix() for p in CANDIDATES))
+    st.warning(f"Logo not found. Looked in: {', '.join(str(p) for p in CANDIDATES)}")
 
 st.markdown("""
 <div class="hero">
